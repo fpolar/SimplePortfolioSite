@@ -99,3 +99,12 @@ a{
 		}
 	}
 }
+@media screen and (min-device-width: 1080px){
+	#default-header{
+		height: 80vh;
+		padding-top: 30vh;
+		.myName{
+			margin-left: 15px;
+		}
+	}
+}

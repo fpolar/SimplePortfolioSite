@@ -41,6 +41,7 @@ $(document).ready(function(){
 });
 $(window).on('resize', function(){
 	resizeSplashBG();
+	console.log($(window).width());
 	if($(window).width()>1000){
 		longImageFlag = "long/";
 	}
@@ -99,4 +100,3 @@ function changeColors(x) {
 	});
 	
 }
-
