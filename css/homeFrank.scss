@@ -1,0 +1,131 @@
+$defaultLight: #3f3f3f;
+$defaultDark: #161616;
+$gl: #36802d;
+$gd: #234d20;
+$pl: #732B80;
+$pd: #512355;
+$rl: #D82A2D;
+$rd: darkred;
+$bl: #1537D7;
+$bd: darkblue;
+html, body{
+	height: 100%;
+	width: 100vw;
+	overflow-x: hidden;
+}
+a{
+	transition: color 1s;
+	&:hover{
+		text-decoration: none;
+	}
+}
+.default-link{
+	color:$defaultLight;
+	&:hover{
+		color:$defaultDark;
+	}
+}
+.green-link{
+	color:$gl;
+	&:hover{
+		color:$gd;
+	}
+}
+.purple-link{
+	color:$pl;
+	&:hover{
+		color:$pd;
+	}
+}
+.grey-link{
+	color:grey;
+	&:hover{
+		color:black;
+	}
+}
+.red-link{
+	color:$rl;
+	&:hover{
+		color:$rd;
+	}
+}
+.blue-link{
+	color: $bl;
+	&:hover{
+		color:$bd;
+	}
+}
+#default-header{
+	text-align: center;
+	padding-bottom: 20vw;
+	padding-top: 18.8vw;
+	max-height: 85vh;
+	font-size: 8vw;
+	text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+	.myName{
+		z-index: 1;
+		#first-name{
+			font-weight: 900;
+		}
+		#middle-name{
+			display: none;
+			font-weight: 400;
+		}
+		#last-name{
+			font-weight: 100;
+		}
+	}
+	.myLinks{
+		font-size: 4vw;
+		a{
+			margin: 0vw 1vw;
+		}
+	}
+	.myNav{
+		z-index: 2;
+		font-size: 2.5vw;
+		width: 100%;
+		li{
+			padding: 1vh 1vw;
+		}
+	}
+	#splash-middle{
+		background-position: center;
+		background-size: cover; 
+		position: absolute;
+		top: 0px;
+		left: 0;
+		opacity: 1;
+		filter: blur(0px);
+		width: 100vw;
+		z-index: -1;
+		transition: filter .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out, background-size .1s ease-in-out;
+		
+	}
+	#splash-left{
+		background: url("../assets/imgs/20170707_110521.JPG");
+		background-position: center;
+		background-size: cover; 
+		position: absolute;
+		top: 0px;
+		left: -100vw;
+		width: 100vw;
+		z-index: -1;
+		filter: blur(20px);
+		opacity: 0;
+		transition: filter .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out, background-size .1s ease-in-out;
+	}
+	#splash-right{
+		background: url("../assets/imgs/DSC_0857.JPG");
+		background-position: center;
+		background-size: cover; 
+		position: absolute;
+		top: 0px;
+		left: 100vw;
+		width: 100vw;
+		z-index: -2;
+		filter: blur(20px);
+		opacity: 0;
+		transition: filter .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out, background-size .1s ease-in-out;
+	}
+}

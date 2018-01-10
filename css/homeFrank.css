@@ -1,0 +1,101 @@
+html, body {
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden; }
+
+a {
+  transition: color 1s; }
+  a:hover {
+    text-decoration: none; }
+
+.default-link {
+  color: #3f3f3f; }
+  .default-link:hover {
+    color: #161616; }
+
+.green-link {
+  color: #36802d; }
+  .green-link:hover {
+    color: #234d20; }
+
+.purple-link {
+  color: #732B80; }
+  .purple-link:hover {
+    color: #512355; }
+
+.grey-link {
+  color: grey; }
+  .grey-link:hover {
+    color: black; }
+
+.red-link {
+  color: #D82A2D; }
+  .red-link:hover {
+    color: darkred; }
+
+.blue-link {
+  color: #1537D7; }
+  .blue-link:hover {
+    color: darkblue; }
+
+#default-header {
+  text-align: center;
+  padding-bottom: 20vw;
+  padding-top: 18.8vw;
+  max-height: 85vh;
+  font-size: 8vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+  #default-header .myName {
+    z-index: 1; }
+    #default-header .myName #first-name {
+      font-weight: 900; }
+    #default-header .myName #middle-name {
+      display: none;
+      font-weight: 400; }
+    #default-header .myName #last-name {
+      font-weight: 100; }
+  #default-header .myLinks {
+    font-size: 4vw; }
+    #default-header .myLinks a {
+      margin: 0vw 1vw; }
+  #default-header .myNav {
+    z-index: 2;
+    font-size: 2.5vw;
+    width: 100%; }
+    #default-header .myNav li {
+      padding: 1vh 1vw; }
+  #default-header #splash-middle {
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    opacity: 1;
+    filter: blur(0px);
+    width: 100vw;
+    z-index: -1;
+    transition: filter .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out, background-size .1s ease-in-out; }
+  #default-header #splash-left {
+    background: url("../assets/imgs/20170707_110521.JPG");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: -100vw;
+    width: 100vw;
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0;
+    transition: filter .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out, background-size .1s ease-in-out; }
+  #default-header #splash-right {
+    background: url("../assets/imgs/DSC_0857.JPG");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 100vw;
+    width: 100vw;
+    z-index: -2;
+    filter: blur(20px);
+    opacity: 0;
+    transition: filter .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out, background-size .1s ease-in-out; }
