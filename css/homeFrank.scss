@@ -1,13 +1,6 @@
 $defaultLight: #3f3f3f;
 $defaultDark: #161616;
-$gl: #36802d;
-$gd: #234d20;
-$pl: #732B80;
-$pd: #512355;
-$rl: #D82A2D;
-$rd: darkred;
-$bl: #1537D7;
-$bd: darkblue;
+
 html, body{
 	height: 100%;
 	width: 100vw;
@@ -24,45 +17,17 @@ a{
 	&:hover{
 		color:$defaultDark;
 	}
-}
-.green-link{
-	color:$gl;
-	&:hover{
-		color:$gd;
-	}
-}
-.purple-link{
-	color:$pl;
-	&:hover{
-		color:$pd;
-	}
-}
-.grey-link{
-	color:grey;
-	&:hover{
-		color:black;
-	}
-}
-.red-link{
-	color:$rl;
-	&:hover{
-		color:$rd;
-	}
-}
-.blue-link{
-	color: $bl;
-	&:hover{
-		color:$bd;
-	}
-}
+} 
 #default-header{
 	text-align: center;
-	padding-bottom: 20vw;
-	padding-top: 18.8vw;
-	max-height: 85vh;
+	padding-bottom: 20vh;
+	padding-top: 17vh;
+	max-height: 80vh;
+	min-height: 50vh;
 	font-size: 8vw;
-	text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+	text-shadow: .5vh .5vh .35vh rgba(0,0,0,.55);
 	.myName{
+		transition: color .4s ease-in-out;
 		z-index: 1;
 		#first-name{
 			font-weight: 900;
@@ -73,20 +38,6 @@ a{
 		}
 		#last-name{
 			font-weight: 100;
-		}
-	}
-	.myLinks{
-		font-size: 4vw;
-		a{
-			margin: 0vw 1vw;
-		}
-	}
-	.myNav{
-		z-index: 2;
-		font-size: 2.5vw;
-		width: 100%;
-		li{
-			padding: 1vh 1vw;
 		}
 	}
 	#splash-middle{
@@ -127,5 +78,24 @@ a{
 		filter: blur(20px);
 		opacity: 0;
 		transition: filter .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out, background-size .1s ease-in-out;
+	}
+}
+.fade{
+	opacity: 1;
+	margin-top: -8vh;
+	height: 8vh;
+	background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
+}
+#icon-bar{
+	background-color: white;
+	text-align: center;
+	font-size: 8vw;
+	padding-top: 6vh;
+	.myLinks{
+		transition: color .4s ease-in-out;
+		font-size: 4vw;
+		a{
+			margin: 0vw 1vw;
+		}
 	}
 }

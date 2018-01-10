@@ -1,23 +1,33 @@
 //array of image src's and text colors
 var imagePairs = [
-	["water.png", 0],
-	["trees.png", 0],
-	["sand.png", 0],
-	["sand-big.png", 0],
-	["moon.png", 0],
-	["lady.png", 0],
-	["flower.png", 0],
-	["cliff.png", 0],
-	["bird.png", 0],
-	["ben.png", 0],
-	["bean.png", 0],
-	["aquarium.png", 0]
+	["lady.png", 7, 0],
+	["water.png", 0, 0],
+	["ben.png", 6, 5],
+	["moon.png", 6, 5],
+	["bird.png", 4, 3],
+	["bean.png", 0, 0],
+	["cliff.png", 6, 5],
+	["sand-big.png", 6, 5],
 ];
 var colorPairs = [
-	["red", "blue"],
-	["green","purple"],
-	["grey","grey"]
+	//red 0
+	["#d31316", "darkred"],
+	//green 1
+	["#36802d", "#234d20"],
+	//light green 2
+	["#88e88d", "#48a048"],
+	//blue 3
+	["#1537D7","darkblue"],
+	//light blue 4
+	["#8292dd","#273a93"],
+	//grey 5
+	["#adadad","#919191"],
+	//white 6
+	["#e5e5e5","#8c8c8c"],
+	//bright red 7
+	["#ea1014", "darkred"],
 ];
+var longImageFlag = "";
 var currLoc = 0;
 var autoSlide = false;
 
@@ -25,16 +35,19 @@ var autoSlide = false;
 //ensures that the bg is always correctly sized
 $(document).ready(function(){
 	resizeSplashBG();
-//	setInterval(function(){
-//		autoSlide = true;
-//	}, 3500);
-//	setInterval(function(){
-//		if(autoSlide){
-//			nextSlide(1);
-//		}
-//	}, 3500);
+	if($(window).width()>1000){
+		longImageFlag = "long/";
+	}
 });
-$(window).on('resize', resizeSplashBG);
+$(window).on('resize', function(){
+	resizeSplashBG();
+	if($(window).width()>1000){
+		longImageFlag = "long/";
+	}
+	else{
+		longImageFlag = "";
+	}
+});
 
 //sets height for background images
 function resizeSplashBG() {
@@ -63,7 +76,7 @@ function nextSlide(x) {
 	$("#"+splashingOutside).remove(); // delete the side that will be replaced
 	
 	//setting the background image and changing its css id so it slides in 
-	$(splashingIn).css("background-image", "url(assets/imgs/"+imagePairs[currLoc][0]+")");
+	$(splashingIn).css("background-image", "url(assets/imgs/"+longImageFlag+imagePairs[currLoc][0]+")");
 	$("#splash-middle").attr("id", splashingOutside)
 	setTimeout(200);
 	$(splashingIn).attr('id', 'splash-middle');
@@ -76,14 +89,14 @@ function nextSlide(x) {
 
 function changeColors(x) {
 	var links = $(".default-link");
-	links.removeClass("default-link");
 	$.each(links, function(){
 		if($(this).closest("div").attr('class') === "myName"){
-			$(this).addClass(colorPairs[imagePairs[currLoc][1]][0]+"-link");
+			$(this).css("color", colorPairs[imagePairs[currLoc][1]][0]);
 		}
 		else{
-			$(this).addClass(colorPairs[imagePairs[currLoc][1]][1]+"-link");
+			$(this).css("color", colorPairs[imagePairs[currLoc][2]][0]);
 		}
 	});
+	
 }
 
