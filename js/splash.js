@@ -28,6 +28,7 @@ var colorPairs = [
 	["#ea1014", "darkred"],
 ];
 var longImageFlag = "";
+var smallImageFlag = "";
 var currLoc = 0;
 var autoSlide = false;
 
@@ -38,12 +39,22 @@ $(document).ready(function(){
 	if($(window).width()>1000){
 		longImageFlag = "long/";
 	}
+	if($(window).width()<400){
+		longImageFlag = "small/";
+	}
 });
 $(window).on('resize', function(){
 	resizeSplashBG();
 	console.log($(window).width());
 	if($(window).width()>1000){
 		longImageFlag = "long/";
+	}
+	else{
+		longImageFlag = "";
+	}
+	
+	if($(window).width()<400){
+		longImageFlag = "small/";
 	}
 	else{
 		longImageFlag = "";
@@ -77,7 +88,7 @@ function nextSlide(x) {
 	$("#"+splashingOutside).remove(); // delete the side that will be replaced
 	
 	//setting the background image and changing its css id so it slides in 
-	$(splashingIn).css("background-image", "url(assets/imgs/"+longImageFlag+imagePairs[currLoc][0]+")");
+	$(splashingIn).css("background-image", "url(assets/imgs/"+longImageFlag+smallImageFlag+imagePairs[currLoc][0]+")");
 	$("#splash-middle").attr("id", splashingOutside)
 	setTimeout(200);
 	$(splashingIn).attr('id', 'splash-middle');
